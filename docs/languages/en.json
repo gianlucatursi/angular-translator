@@ -1,0 +1,33 @@
+{
+	"title" : "Language selected: English",
+	"description": "A translation module for AngularJS. [@version]",
+	"contributor": "Powered by <a href=\"mailto:@email\"> @name @surname </a>",
+	"form": {
+		"username": {
+			"label": "Username",
+			"placehoder": "Insert your username"
+		},
+		"email"   : {
+			"label": "Email",
+			"placehoder": "Insert your email"
+		},
+		"password": {
+			"label": "Password (should be at least 6 chars)",
+			"placehoder": "Insert your password"
+		},
+		"submit": "Submit",
+		"cancel": "Cancel"
+	},
+
+	"results": ["@value result", "@value results"],
+
+	"other_examples": [
+		"First element",
+		{
+			"name": "Second element"
+		}
+	],
+	"message_in_controller": "Message translated in controller",
+	"lang_english": "English",
+	"lang_italian": "Italiano"
+}

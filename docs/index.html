@@ -1,0 +1,378 @@
+<html ng-app="myApp">
+    <head>
+        <title>
+            Angular-Translator
+        </title>
+        <!-- Latest compiled and minified CSS -->
+        <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet">
+            <link href="css/main.css" rel="stylesheet">
+            </link>
+        </link>
+    </head>
+    <body ng-controller="MainController as main">
+        <div class="container">
+            <div class="header clearfix">
+                <nav>
+                    <ul class="nav nav-pills pull-right">
+                        <li class="{{main.active.language == 'en' ? 'active' : ''}}" ng-click="main.switch('en')" role="presentation">
+                            <a href="#">
+                                English
+                            </a>
+                        </li>
+                        <li class="{{main.active.language == 'it' ? 'active' : ''}}" ng-click="main.switch('it')" role="presentation">
+                            <a href="#">
+                                Italiano
+                            </a>
+                        </li>
+                        <li class="{{main.active.language == 'es' ? 'active' : ''}}" ng-click="main.switch('es')" role="presentation">
+                            <a href="#">
+                                Español
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <h3 class="text-muted">
+                    Angular Translator
+                </h3>
+            </div>
+            <div class="row marketing">
+                <div class="col-lg-12">
+                    <h3>Getting started</h3>
+
+                    <h4>Installation</h4>
+                    <p>You can install with bower or npm</p>
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#bower">
+                                Bower
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#npm">
+                                NPM
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="my-tab-content tab-content">
+                        <div class="tab-pane active" id="bower">
+                            <code>bower install angular-translator --save</code>
+                        </div>
+                        <div class="tab-pane" id="npm">
+                            <code>npm install angular-translator --save</code>
+                        </div>
+                    </div>
+                    <h4>Import in your project</h4>
+                    <p>Include <kbd>dist/angular-translator.min.js</kbd> in our <kbd>index.html</kbd>, after including Angular itself.</p>
+                    <p>Inject <kbd>ngTranslator</kbd> to your main module's list of dependencies.</p>
+                    <h4>Configuration</h4>
+                    <p>In <kbd>app.run</kbd> method configure the translation module (This is the best way but you can do this wherever you want):</p>
+                    <div class="my-tab-content">
+                        <code>
+                            <br/><br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;app.run(<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function($translator){<br/><br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$translator<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.configure({<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;language : "en", <span class="css_key">//name of en.json</span><br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path     : "languages/", <span class="css_key">//root directory for languages</span><br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default  : "en" <span class="css_key">//default language</span><br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br/><br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br/>
+                            <br/><br/>
+                        </code>
+                    </div>
+                    <br/>
+                    <h4>Define translations</h4>
+                    <p>Angular-translator working with external file for translations.
+                        <br>Create a folder in your project, for example <kbd>./languages</kbd>, and put inside your translations file in json format.
+                        For example you can create two languages (<kbd>en.json</kbd> and <kbd>it.json</kbd>) for English and Italian and sould be something like:
+                    </p>
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#eng">
+                                en.json
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#ita">
+                                it.json
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="my-tab-content tab-content">
+                        <div class="tab-pane active" id="eng">
+                            <code class="css_result">
+                                {
+                                    <span class="css_key"> "say_hi":</span> <span class="css_text">"Hello World!"</span>
+                                }
+                            </code>
+                        </div>
+                        <div class="tab-pane" id="ita">
+                            <code class="css_result">
+                                {
+                                <span class="css_key"> "say_hi":</span> <span class="css_text">"Ciao Mondo!"</span>
+                                }
+                            </code>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row marketing">
+                <div class="col-lg-12">
+                    <h3>
+                        How to use
+                    </h3>
+
+                    <h4>
+                        Simple translation
+                    </h4>
+                    <p>Used for a simple text to translate</p>
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#result_1">
+                                Result
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#html_1">
+                                HTML
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#json_1">
+                                {{main.active.language}}.json
+                            </a>
+                        </li>
+                    </ul>
+                    <div id="my-tab-content" class="my-tab-content tab-content">
+				        <div class="tab-pane active" id="result_1">
+                            <code>
+				                <span class="bold css_result" translated="title"></span>
+                            </code>
+				        </div>
+				        <div class="tab-pane" id="html_1">
+				            <code class="colored">
+				            	&lt;span <span class="css_class">translated=</span><span class="css_text">"title"</span>&gt;&lt;/span&gt;
+				            </code>
+				        </div>
+				        <div class="tab-pane" id="json_1">
+				            <code class="colored">
+				            	<span class="css_key">"title"</span> : <span class="css_text">"<span class="css_text" translated="title"></span>"</span>
+				            </code>
+				        </div>
+				    </div>
+                </div>
+            </div>
+
+            <!-- replacement -->
+            <div class="row marketing">
+                <div class="col-lg-12">
+                    <h4>
+                        Translation with params
+                    </h4>
+                    <p>Used for translate a string that contain runtime data.
+                       You can define your dynamic content with
+                        <kbd>@param_name</kbd> then use
+                        <kbd>translated-params</kbd> in your HTML tag for passing <b>@param_name</b> value.<br>
+                        Check the sample below:</p>
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#result_2">
+                                Result
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#html_2">
+                                HTML
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#js_2">
+                                AngularJs
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#json_2">
+                                {{main.active.language}}.json
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="my-tab-content tab-content">
+                        <div class="tab-pane active" id="result_2">
+                            <code>
+                                <span class="bold css_result" translated="description" translated-params="main.version"></span>
+                            </code>
+                        </div>
+                        <div class="tab-pane" id="html_2">
+                            <code class="colored">
+                                &lt;span
+                                <span class="css_class">translated=</span>
+                                <span class="css_text">"description"</span>
+                                <span class="css_class">translated-params=</span>
+                                <span class="css_text">"version"</span>&gt;&lt;/span&gt;
+                            </code>
+                        </div>
+                        <div class="tab-pane" id="js_2">
+                            <code class="css_result">
+                                $scope.version = {<span class="css_key">'version':</span> <span class="css_text">'v0.0.1'</span>};
+                            </code>
+                        </div>
+                        <div class="tab-pane" id="json_2">
+                            <code class="colored">
+                                <span class="css_key">"title"</span> : <span class="css_text">"<span class="css_text" translated="description"></span>"<span class="css_text"></span>
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <footer class="footer">
+                <p>
+                    © 2016 Company, Inc.
+                </p>
+            </footer>
+        </div>
+        <!-- Begin page content -->
+        <div class="container">
+            <div class="m-t-1">
+                <h1 translated="title">
+                </h1>
+            </div>
+            <p class="lead" translated="description" translated-params="main.version">
+            </p>
+        </div>
+    </body>
+<!--
+	<h3>
+	    Example from
+	</h3>
+	<form>
+	    <label translated="form.username.label">
+	    </label>
+	    <input placeholder-translated="form.username.placehoder" translated="" type="text"/>
+	    <br/>
+	    <label translated="form.email.label">
+	    </label>
+	    <input placeholder-translated="form.email.placehoder" translated="" type="text"/>
+	    <br/>
+	    <label translated="form.password.label">
+	    </label>
+	    <input placeholder-translated="form.password.placehoder" translated="" type="password"/>
+	    <br/>
+	    <button translated="form.submit" type="submit">
+	    </button>
+	    <button translated="form.cancel">
+	    </button>
+	</form>
+	<h3>
+	    Example Prural
+	</h3>
+	<p prural="main.results.one.value" translated="results" translated-params="main.results.one">
+	</p>
+	<p prural="6" translated="results" translated-params="{value: 6}">
+	</p>
+	<h3>
+	    Example translation in controller
+	</h3>
+	<button ng-click="main.translateInController()">
+	    ALERT
+	</button>
+	<h3>
+	    Other examples
+	</h3>
+	<ul>
+	    <li translated="other_examples[0]">
+	    </li>
+	    <li translated="other_examples[1].name">
+	    </li>
+	</ul>
+	<button ng-click="main.switch('en')" translated="lang_english">
+	</button>
+	<button ng-click="main.switch('it')" translated="lang_italian">
+	</button>
+	<footer class="footer">
+	    <div class="container">
+	        <span class="text-muted" translated="contributor" translated-params="main.myInfo">
+	        </span>
+	    </div>
+	</footer>
+-->
+</html>
+<script src="../bower_components/jquery/dist/jquery.min.js">
+</script>
+<!-- Latest compiled and minified JavaScript -->
+<script crossorigin="anonymous" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+</script>
+<script src="../bower_components/angular/angular.min.js">
+</script>
+<script src="../src/angular-translator.js">
+</script>
+<script>
+    (function(){
+
+	var app = angular.module('myApp', ['ngTranslator']);
+
+	app.run(
+		function($translator){
+			$translator
+				.configure({
+					language : "en",
+					path     : "languages/",
+					default  : "en"
+				});
+		});
+
+	app.controller('MainController', ['$scope','$translator', function($scope, $translator){
+
+		var _this = this;
+		_this.scope = $scope;
+
+		//change language
+		_this.switch = _switch;
+
+		//alert a message translated
+		_this.translateInController = _translateInController;
+
+		_this.active = { language: "en" };
+		_this.version = {'version': 'v0.0.1'};
+		_this.results = {
+			one:{
+				value: 1
+			}
+		};
+
+		_this.myInfo = {
+			name: "Gianluca", 
+			surname: "Tursi",
+			email: "gian.tursi@gmail.com"
+		};
+		
+		/**
+		 * Change language
+		 * @param  {[type]} lng [description]
+		 * @return {[type]}     [description]
+		 */
+		function _switch(lng){
+			$translator
+				.changeLanguage({
+					language : lng,
+					path     : "languages/",
+					default  : "en"
+				});
+
+			_this.active.language = lng;
+		}
+
+		/**
+		 * Translate message dinamically
+		 * @return {[type]} [description]
+		 */
+		function _translateInController(){
+			alert($translator.translate('message_in_controller'));
+		}
+	}]);
+})(window);
+</script>

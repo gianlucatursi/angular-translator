@@ -1,0 +1,33 @@
+{
+	"title" : "Angular Translator Italiano",
+	"description": "Modulo per la traduzione in AngularJS. [@version]",
+	"contributor": "Creado da <a href=\"mailto:@email\"> @name @surname </a>",
+	"form": {
+		"username": {
+			"label": "Nome utente",
+			"placehoder": "Inserisci il tuo nome utente"
+		},
+		"email"   : {
+			"label": "Email",
+			"placehoder": "Inserisci la tua email"
+		},
+		"password": {
+			"label": "Password (deve essere almeno 6 caratteri)",
+			"placehoder": "Inserisci la tua password"
+		},
+		"submit": "Invia",
+		"cancel": "Annulla"
+	},
+
+	"results": ["@value risultato", "@value risultati"],
+
+	"other_examples": [
+		"Primo element",
+		{
+			"name": "Secondo elemento"
+		}
+	],
+	"message_in_controller": "Messaggio tradotto nel controller",
+	"lang_english": "English",
+	"lang_italian": "Italiano"
+}

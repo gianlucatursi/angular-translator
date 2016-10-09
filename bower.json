@@ -1,0 +1,31 @@
+{
+  "name": "angular-translator",
+  "description": "A translation module for AngularJS",
+  "version": "0.0.1",
+  "main": "./dist/angular-translator.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gianlucatursi/angular-translator.git"
+  },
+  "authors": [
+    "Gianluca Tursi <gian.tursi@gmail.com>"
+  ],
+  "keywords": [
+    "angular",
+    "i18n",
+    "translate",
+    "translation",
+    "languages",
+    "globalization"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": ">=1.3.0",
+    "jquery": "^3.1.1"
+  },
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test"
+  ]
+}

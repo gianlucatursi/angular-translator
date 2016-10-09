@@ -1,0 +1,44 @@
+{
+  "name": "angular-translator",
+  "description": "A translation module for AngularJS",
+  "version": "0.0.1",
+  "filename": "angular-translator.min.js",
+  "main": "./dist/angular-translator.min.js",
+  "homepage": "https://github.com/gianlucatursi/angular-translator",
+  "author": "Gianluca Tursi <gian.tursi@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gianlucatursi/angular-translator.git"
+  },
+  "engines": {
+    "node": ">= 0.9"
+  },
+  "keywords": [
+    "angular",
+    "i18n",
+    "translate",
+    "translation",
+    "languages",
+    "globalization"
+  ],
+  "maintainers": [
+    {
+      "name": "Gianluca Tursi",
+      "website": "http://gianlucatursi.com"
+    }
+  ],
+  "dependencies": {},
+  "peerDependencies": {
+    "angular": ">=1.3.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0"
+  },
+  "scripts": {
+    "test": "grunt test --verbose"
+  },
+  "license": "MIT"
+}
