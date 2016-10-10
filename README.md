@@ -19,6 +19,7 @@ A translation module for AngularJS.
     - [Other examples](#other-examples)
     - [Dynamic translation](#dynamic-translation)
     - [Switch language](#switch-language)
+- [Documentation](#documentation)    
 - [License](#license)
 
 <a name="license"></a>
@@ -258,9 +259,12 @@ $scope.switch = function _switch(lng){
 { "message" : "English message!" }
 
 ```
+## Documentation
+
+Check documentation and examples [here](http://angular-translator.gianlucatursi.com)
 
 <a name="license"></a>
-##LICENSE
+## LICENSE
 The MIT License
 
 Copyright (c) 2016 Gianluca Tursi http://www.gianlucatursi.com
