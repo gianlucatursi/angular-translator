@@ -5,7 +5,7 @@
         </title>
         <!-- Latest compiled and minified CSS -->
         <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet" />
-        <link href="css/main.css" rel="stylesheet" />
+        <link href="http://tursigianluca.altervista.org/angular-translator/docs/css/main.css" rel="stylesheet" />
     </head>
     <body ng-controller="MainController as main">
         <div class="container">
@@ -528,9 +528,9 @@ $scope.switch = function _switch(lng){
 <!-- Latest compiled and minified JavaScript -->
 <script crossorigin="anonymous" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="javascript/highlight.min.js"></script>
-<script src="../bower_components/angular/angular.min.js"></script>
-<script src="../bower_components/angular-highlightjs/build/angular-highlightjs.min.js"></script>
-<script src="../dist/angular-translator.min.js"></script>
+<script src="javascript/angular.min.js"></script>
+<script src="javascript/angular-highlightjs.min.js"></script>
+<script src="javascript/angular-translator.min.js"></script>
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
@@ -544,7 +544,7 @@ $scope.switch = function _switch(lng){
 			$translator
 				.configure({
 					language : "en",
-					path     : "languages/",
+					path     : "https://raw.githubusercontent.com/gianlucatursi/angular-translator/master/docs/languages/",
 					default  : "en"
 				});
 		});
