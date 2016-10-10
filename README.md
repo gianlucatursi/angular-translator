@@ -106,13 +106,6 @@ $scope.version = {"version":"v0.0.1"};
 ### Inputs
 Used for translate placeholder in input filed. Insert in you translated tag `placeholder-translated`  
 ```javascript
-/** Result **/
-```
-<form>
-    <label>Username</label><br/>
-    <input translated="Insert your username"><br/>
-</form>
-```
 /** HTML **/
 <form>
     <label translated="form.username.label"></label>
