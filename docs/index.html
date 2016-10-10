@@ -4,16 +4,16 @@
             Angular-Translator
         </title>
         <!-- Latest compiled and minified CSS -->
-        <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet">
-            <link href="css/main.css" rel="stylesheet">
-            </link>
-        </link>
+        <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet" />
+        <link href="css/main.css" rel="stylesheet" />
     </head>
     <body ng-controller="MainController as main">
         <div class="container">
             <div class="header clearfix">
+                <!--
                 <nav>
                     <ul class="nav nav-pills pull-right">
+
                         <li class="{{main.active.language == 'en' ? 'active' : ''}}" ng-click="main.switch('en')" role="presentation">
                             <a href="#">
                                 English
@@ -31,6 +31,7 @@
                         </li>
                     </ul>
                 </nav>
+                -->
                 <h3 class="text-muted">
                     Angular Translator
                 </h3>
@@ -38,7 +39,6 @@
             <div class="row marketing">
                 <div class="col-lg-12">
                     <h3>Getting started</h3>
-
                     <h4>Installation</h4>
                     <p>You can install with bower or npm</p>
                     <ul class="nav nav-tabs">
@@ -55,10 +55,10 @@
                     </ul>
                     <div class="my-tab-content tab-content">
                         <div class="tab-pane active" id="bower">
-                            <code>bower install angular-translator --save</code>
+                            <div hljs>bower install angular-translator --save</div>
                         </div>
                         <div class="tab-pane" id="npm">
-                            <code>npm install angular-translator --save</code>
+                            <div class="my-tab-content" hljs>npm install angular-translator --save</div>
                         </div>
                     </div>
                     <h4>Import in your project</h4>
@@ -67,19 +67,16 @@
                     <h4>Configuration</h4>
                     <p>In <kbd>app.run</kbd> method configure the translation module (This is the best way but you can do this wherever you want):</p>
                     <div class="my-tab-content">
-                        <code>
-                            <br/><br/>
-                            &nbsp;&nbsp;&nbsp;&nbsp;app.run(<br/>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function($translator){<br/><br/>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$translator<br/>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.configure({<br/>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;language : "en", <span class="css_key">//name of en.json</span><br/>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;path     : "languages/", <span class="css_key">//root directory for languages</span><br/>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default  : "en" <span class="css_key">//default language</span><br/>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br/><br/>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br/>
-                            <br/><br/>
-                        </code>
+<code hljs>
+    app.run(
+        function($translator){
+            $translator
+                .configure({
+                    language : "en", //name of en.json
+                    path     : "languages/", //root directory for languages
+                    default  : "en" //default language
+                });
+        });</code>
                     </div>
                     <br/>
                     <h4>Define translations</h4>
@@ -101,18 +98,10 @@
                     </ul>
                     <div class="my-tab-content tab-content">
                         <div class="tab-pane active" id="eng">
-                            <code class="css_result">
-                                {
-                                    <span class="css_key"> "say_hi":</span> <span class="css_text">"Hello World!"</span>
-                                }
-                            </code>
+                        <code hljs>{ "say_hi": "Hello World!" }</code>
                         </div>
                         <div class="tab-pane" id="ita">
-                            <code class="css_result">
-                                {
-                                <span class="css_key"> "say_hi":</span> <span class="css_text">"Ciao Mondo!"</span>
-                                }
-                            </code>
+                            <code hljs>{ "say_hi":"Ciao Mondo!"}</code>
                         </div>
                     </div>
 
@@ -124,7 +113,7 @@
                     <h3>
                         How to use
                     </h3>
-
+                    <p>In the example below i use always <kbd><span></kbd> element but you can use whatever you want</p>
                     <h4>
                         Simple translation
                     </h4>
@@ -142,7 +131,7 @@
                         </li>
                         <li>
                             <a data-toggle="tab" href="#json_1">
-                                {{main.active.language}}.json
+                                en.json
                             </a>
                         </li>
                     </ul>
@@ -153,14 +142,10 @@
                             </code>
 				        </div>
 				        <div class="tab-pane" id="html_1">
-				            <code class="colored">
-				            	&lt;span <span class="css_class">translated=</span><span class="css_text">"title"</span>&gt;&lt;/span&gt;
-				            </code>
+				            <code hljs><span translated="title"></span></code>
 				        </div>
 				        <div class="tab-pane" id="json_1">
-				            <code class="colored">
-				            	<span class="css_key">"title"</span> : <span class="css_text">"<span class="css_text" translated="title"></span>"</span>
-				            </code>
+				            <code hljs>{ "title" : "Hello World!" }</code>
 				        </div>
 				    </div>
                 </div>
@@ -195,7 +180,7 @@
                         </li>
                         <li>
                             <a data-toggle="tab" href="#json_2">
-                                {{main.active.language}}.json
+                                en.json
                             </a>
                         </li>
                     </ul>
@@ -206,114 +191,367 @@
                             </code>
                         </div>
                         <div class="tab-pane" id="html_2">
-                            <code class="colored">
-                                &lt;span
-                                <span class="css_class">translated=</span>
-                                <span class="css_text">"description"</span>
-                                <span class="css_class">translated-params=</span>
-                                <span class="css_text">"version"</span>&gt;&lt;/span&gt;
-                            </code>
+                            <code hljs>
+<span translated="description"translated-params="version"></span>
+<!-- alternative without angular var -->
+<span translated="description" translated-params="{'version':'v0.0.1'}"></span></code>
                         </div>
                         <div class="tab-pane" id="js_2">
-                            <code class="css_result">
-                                $scope.version = {<span class="css_key">'version':</span> <span class="css_text">'v0.0.1'</span>};
-                            </code>
+                            <code hljs>$scope.version = {"version":"v0.0.1"};</code>
                         </div>
                         <div class="tab-pane" id="json_2">
-                            <code class="colored">
-                                <span class="css_key">"title"</span> : <span class="css_text">"<span class="css_text" translated="description"></span>"<span class="css_text"></span>
-                            </code>
+                            <code hljs="">{"title": ""}</code>
                         </div>
                     </div>
                 </div>
             </div>
 
 
+            <!-- FORM -->
+            <div class="row marketing">
+                <div class="col-lg-12">
+                    <h4>
+                        Inputs
+                    </h4>
+                    <p>Used for translate placeholder in input filed. Insert in you translated tag <kbd>placeholder-translated</kbd></p>
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#result_3">
+                                Result
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#html_3">
+                                HTML
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#json_3">
+                                en.json
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="my-tab-content tab-content">
+                        <div class="tab-pane active" id="result_3">
+                            <code>
+                                <form>
+                                    <label translated="form.username.label"></label>
+                                    <input class="form-control" placeholder-translated="form.username.placehoder" translated="" type="text"/>
+                                    <br/><br/>
+                                    <button class="btn btn-sm btn-success" translated="form.submit" type="submit"></button>
+                                    <button class="btn btn-sm btn-danger" translated="form.cancel"></button>
+                                </form>
+                            </code>
+                        </div>
+                        <div class="tab-pane" id="html_3">
+<code hljs>
+<form>
+    <label translated="form.username.label"></label>
+    <input placeholder-translated="form.username.placehoder" translated/>
+    <button type="submit" translated="form.submit"></button>
+    <button translated="form.cancel"></button>
+</form>
+</code>
+                        </div>
+                        <div class="tab-pane" id="json_3">
+<code hljs>
+{
+    "form": {
+        "username": {
+            "label": "Username",
+            "placehoder": "Insert your username"
+        },
+        "submit": "Submit",
+        "cancel": "Cancel"
+    }
+}
+</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Prural -->
+            <div class="row marketing">
+                <div class="col-lg-12">
+                    <h4>
+                        Translation for prural
+                    </h4>
+                    <p>Used for translate a string that can be single or prural.
+                        In the example below there is a combination of parameters and prural.
+                        In your <kbd>&lt;lang&gt;.json</kbd> file you should define an array with two elements and in position <kbd>0</kbd> the sentece for the single case
+                        and in position <kbd>1</kbd> the sentence for the prural case.
+                    </p>
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#result_4">
+                                Result
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#html_4">
+                                HTML
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#js_4">
+                                AngularJS
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#json_4">
+                                en.json
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="my-tab-content tab-content">
+                        <div class="tab-pane active" id="result_4">
+                            <code>
+                                <p prural="main.results.one.value" translated="results" translated-params="main.results.one"></p>
+                                <p prural="6" translated="results" translated-params="{'value': 6}"></p>
+                            </code>
+                        </div>
+                        <div class="tab-pane" id="html_4">
+<code hljs>
+<!-- Single value -->
+<p translated="results"
+   prural="results_value.one.value"
+   translated-params="results_value.one"></p>
+
+<!-- Prural value -->
+<p translated="results"
+   prural="6"
+   translated-params="{'value': 6}"></p>
+</code>
+                        </div>
+                        <div class="tab-pane" id="js_4">
+<code hljs="">
+$scope.results_value = {
+    "one": {
+        "value" : 1
+    }
+};
+</code>
+                        </div>
+                        <div class="tab-pane" id="json_4">
+                            <code hljs="">{ "results": ["@value result", "@value results"] }</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Other example -->
+            <div class="row marketing">
+                <div class="col-lg-12">
+                    <h4>
+                        Other examples
+                    </h4>
+                    <p>This chapter is for understand better how to define you json file for a language.</p>
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#html_5">
+                                HTML
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#json_5">
+                                en.json
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="my-tab-content tab-content">
+                        <div class="tab-pane active" id="html_5">
+<code hljs>
+<!-- Simple translation -->
+<div translated="home_page.title"></div>
+
+<!-- Array in <lang>.json -->
+<p translated="home_page.form_inputs[0].label"></p>
+
+<!-- Placeholder translation -->
+<input translated placeholder-translated="home_page.form_inputs[0].placeholder"/>
+
+<!-- Prural with parameters -->
+<span translated="home_page.results" prural="1" translated-params="{'value': 1}"></span>
+
+<!-- Prural with parameters -->
+<h1 translated="home_page.results" prural="6" translated-params="{'value': 6}"></h1>
+</code>
+                        </div>
+                        <div class="tab-pane" id="json_5">
+<code hljs="">
+{
+    "home_page": {
+        "title" : "Home page",
+        "results": [
+            "@value home page result",
+            "@value home page results"
+        ],
+        "form_inputs": [
+            {
+                "label": "first label input",
+                "placeholder": "first input placeholder"
+            }
+        ]
+    }
+}
+</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic -->
+            <div class="row marketing">
+                <div class="col-lg-12">
+                    <h4>Dynamic translation</h4>
+                    <p>Inject <kbd>$translator</kbd> service in your controller/service/etc.. for a run time translation with <kbd>$translator.translate(&lt;key&gt;, &lt;params&gt;, &lt;prural_value&gt;)</kbd></p>
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#result_7">
+                                Result
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#html_7">
+                                HTML
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#js_7">
+                                AngularJS
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#json_7">
+                                en.json
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="my-tab-content tab-content">
+                        <div class="tab-pane active" id="result_7">
+                            <code>
+                                <button class="btn btn-sm btn-info" ng-click="main.translation()">Click Me!</button>
+                            </code>
+                        </div>
+                        <div class="tab-pane" id="html_7">
+<code hljs="">
+<button ng-click="translation()">Click Me!</button>
+</code>
+                        </div>
+                        <div class="tab-pane" id="js_7">
+<code hljs>
+app.controller('..', ['$scope', '$translator',
+    function($scope, $translator){
+        $scope.translation = function(){
+            alert(
+                $translator.translate('message_in_controller', {param_1: "parameter"}, 1)
+            );
+        }
+    }
+);
+</code>
+                        </div>
+                        <div class="tab-pane" id="json_7">
+                            <code hljs>{ "message_in_controller": "Dynamic translation!" }</code>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Switch language -->
+            <div class="row marketing">
+                <div class="col-lg-12">
+                    <h4>Switch language</h4>
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#result_6">
+                                Result
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#html_6">
+                                HTML
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#js_6">
+                                AngularJS
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#json_6">
+                                en.json
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="my-tab-content tab-content">
+                        <div class="tab-pane active" id="result_6">
+                            <code>
+                                <p ng-if="main.active.language == 'it'">Messaggio italiano!</p>
+                                <p ng-if="main.active.language == 'en'">English Message!</p>
+                                <button class="btn btn-ms btn-success" ng-click="main.switch('it')">Italiano</button>
+                                <button class="btn btn-ms btn-info" ng-click="main.switch('en')">English</button>
+                            </code>
+                        </div>
+                        <div class="tab-pane" id="html_6">
+                            <code hljs>
+<p translated="message"></p>
+<button ng-click="switch('it')">Italiano</button>
+<button ng-click="switch('en')">English</button>
+                            </code>
+                        </div>
+                        <div class="tab-pane" id="js_6">
+<code hljs>
+$scope.switch = function _switch(lng){
+    // async method. When finish call $compile.
+    $translator
+        .changeLanguage({
+            language : lng,
+            path     : "languages/",
+            default  : "en"
+    });
+}
+</code>
+                        </div>
+                        <div class="tab-pane" id="json_6">
+                            <code hljs>{ "message" : "English message!" }</code>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
             <footer class="footer">
-                <p>
-                    © 2016 Company, Inc.
-                </p>
+                <p>&copy; 2016 <a href="www.gianlucatursi.com">Gianluca Tursi</a></p>
             </footer>
         </div>
-        <!-- Begin page content -->
-        <div class="container">
-            <div class="m-t-1">
-                <h1 translated="title">
-                </h1>
-            </div>
-            <p class="lead" translated="description" translated-params="main.version">
-            </p>
-        </div>
     </body>
-<!--
-	<h3>
-	    Example from
-	</h3>
-	<form>
-	    <label translated="form.username.label">
-	    </label>
-	    <input placeholder-translated="form.username.placehoder" translated="" type="text"/>
-	    <br/>
-	    <label translated="form.email.label">
-	    </label>
-	    <input placeholder-translated="form.email.placehoder" translated="" type="text"/>
-	    <br/>
-	    <label translated="form.password.label">
-	    </label>
-	    <input placeholder-translated="form.password.placehoder" translated="" type="password"/>
-	    <br/>
-	    <button translated="form.submit" type="submit">
-	    </button>
-	    <button translated="form.cancel">
-	    </button>
-	</form>
-	<h3>
-	    Example Prural
-	</h3>
-	<p prural="main.results.one.value" translated="results" translated-params="main.results.one">
-	</p>
-	<p prural="6" translated="results" translated-params="{value: 6}">
-	</p>
-	<h3>
-	    Example translation in controller
-	</h3>
-	<button ng-click="main.translateInController()">
-	    ALERT
-	</button>
-	<h3>
-	    Other examples
-	</h3>
-	<ul>
-	    <li translated="other_examples[0]">
-	    </li>
-	    <li translated="other_examples[1].name">
-	    </li>
-	</ul>
-	<button ng-click="main.switch('en')" translated="lang_english">
-	</button>
-	<button ng-click="main.switch('it')" translated="lang_italian">
-	</button>
-	<footer class="footer">
-	    <div class="container">
-	        <span class="text-muted" translated="contributor" translated-params="main.myInfo">
-	        </span>
-	    </div>
-	</footer>
--->
+
 </html>
 <script src="../bower_components/jquery/dist/jquery.min.js">
 </script>
 <!-- Latest compiled and minified JavaScript -->
-<script crossorigin="anonymous" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-</script>
-<script src="../bower_components/angular/angular.min.js">
-</script>
-<script src="../src/angular-translator.js">
-</script>
+<script crossorigin="anonymous" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="javascript/highlight.min.js"></script>
+<script src="../bower_components/angular/angular.min.js"></script>
+<script src="../bower_components/angular-highlightjs/build/angular-highlightjs.min.js"></script>
+<script src="../dist/angular-translator.min.js"></script>
+
 <script>
     (function(){
 
-	var app = angular.module('myApp', ['ngTranslator']);
+	var app = angular.module('myApp', ['ngTranslator', 'hljs']);
 
 	app.run(
 		function($translator){
@@ -325,6 +563,17 @@
 				});
 		});
 
+    app.config(
+        function(hljsServiceProvider){
+            hljsServiceProvider.setOptions(
+                {
+                    tabReplace: '', // 4 spaces
+                    classPrefix: ''
+                }
+            );
+        }
+    );
+
 	app.controller('MainController', ['$scope','$translator', function($scope, $translator){
 
 		var _this = this;
@@ -334,7 +583,7 @@
 		_this.switch = _switch;
 
 		//alert a message translated
-		_this.translateInController = _translateInController;
+		_this.translation = _translation;
 
 		_this.active = { language: "en" };
 		_this.version = {'version': 'v0.0.1'};
@@ -356,12 +605,14 @@
 		 * @return {[type]}     [description]
 		 */
 		function _switch(lng){
+            /*
 			$translator
 				.changeLanguage({
 					language : lng,
 					path     : "languages/",
 					default  : "en"
 				});
+            */
 
 			_this.active.language = lng;
 		}
@@ -370,8 +621,8 @@
 		 * Translate message dinamically
 		 * @return {[type]} [description]
 		 */
-		function _translateInController(){
-			alert($translator.translate('message_in_controller'));
+		function _translation(){
+            alert( $translator.translate('message_in_controller', {param_1: "parameter", prural: 1}, 1));
 		}
 	}]);
 })(window);

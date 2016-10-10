@@ -34,7 +34,7 @@ body {
 /* Customize container */
 @media (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 840px;
   }
 }
 .container-narrow > hr {
@@ -129,6 +129,24 @@ body {
 
 .my-tab-content{
     background-color: #353C48;
+    border:none !important;
+}
+.tab-pane{
+    padding: 0;
+}
+.tab-pane code{
+    padding:0;
+}
+pre {
+    border: none;
+    padding-bottom:0;
+}
+.hljs, .result{
+    display: block;
+    overflow-x: auto;
+    -webkit-text-size-adjust: none;
+    background-color: #353C48 !important;
+    color:white !important;
 }
 .my-tab-content code{
     background-color: transparent;
@@ -153,4 +171,23 @@ body {
 }
 kbd{
     background-color: #353C48;
+}
+
+.built_in, .attribute{
+    color:#9876AA !important;
+}
+.keyword {
+    color: #CC7832 ;
+    font-weight: bold;
+}
+.string, .value{
+    color: #6A8759 !important;
+}
+
+.function, .tag, .title{
+    color: #FFC66D !important;
+}
+
+.comment{
+    color: grey !important;
 }

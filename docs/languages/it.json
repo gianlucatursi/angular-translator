@@ -1,19 +1,11 @@
 {
-	"title" : "Angular Translator Italiano",
-	"description": "Modulo per la traduzione in AngularJS. [@version]",
-	"contributor": "Creado da <a href=\"mailto:@email\"> @name @surname </a>",
+	"title" : "Ciao Mondo!",
+	"description": "Modulo per la traduzione in lingua per AngularJS. [@version]",
+	"contributor": "Creato da<a href=\"mailto:@email\"> @name @surname </a>",
 	"form": {
 		"username": {
 			"label": "Nome utente",
 			"placehoder": "Inserisci il tuo nome utente"
-		},
-		"email"   : {
-			"label": "Email",
-			"placehoder": "Inserisci la tua email"
-		},
-		"password": {
-			"label": "Password (deve essere almeno 6 caratteri)",
-			"placehoder": "Inserisci la tua password"
 		},
 		"submit": "Invia",
 		"cancel": "Annulla"
@@ -21,13 +13,23 @@
 
 	"results": ["@value risultato", "@value risultati"],
 
-	"other_examples": [
-		"Primo element",
-		{
-			"name": "Secondo elemento"
-		}
-	],
-	"message_in_controller": "Messaggio tradotto nel controller",
+	"home_page": {
+		"title" : "Pagina iniziale",
+		"results": [
+			"@value risultato pagina iniziale",
+			"@value risultati pagina iniziale"
+		],
+		"form_inputs": [
+			{
+				"label": "Prima etichetta di input",
+				"placeholder": "Primo placeholder di input"
+			}
+		]
+	},
+	"message_in_controller": [
+		"[Singolare] Traduzione dinamica! [param: @param_1]",
+		"[Prurale] Traduzione dinamica! [param: @param_1]"],
 	"lang_english": "English",
-	"lang_italian": "Italiano"
+	"lang_italian": "Italiano",
+	"message" : "Messaggio italiano!"
 }

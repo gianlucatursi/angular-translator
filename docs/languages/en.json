@@ -1,5 +1,5 @@
 {
-	"title" : "Language selected: English",
+	"title" : "Hello World!",
 	"description": "A translation module for AngularJS. [@version]",
 	"contributor": "Powered by <a href=\"mailto:@email\"> @name @surname </a>",
 	"form": {
@@ -7,27 +7,29 @@
 			"label": "Username",
 			"placehoder": "Insert your username"
 		},
-		"email"   : {
-			"label": "Email",
-			"placehoder": "Insert your email"
-		},
-		"password": {
-			"label": "Password (should be at least 6 chars)",
-			"placehoder": "Insert your password"
-		},
 		"submit": "Submit",
 		"cancel": "Cancel"
 	},
 
 	"results": ["@value result", "@value results"],
 
-	"other_examples": [
-		"First element",
-		{
-			"name": "Second element"
-		}
-	],
-	"message_in_controller": "Message translated in controller",
+	"home_page": {
+		"title" : "Home page",
+		"results": [
+			"@value home page result",
+			"@value home page results"
+		],
+		"form_inputs": [
+			{
+				"label": "first label input",
+				"placeholder": "first input placeholder"
+			}
+		]
+	},
+	"message_in_controller": [
+		"[Single] Dynamic translation! [param: @param_1]",
+		"[Prural] Dynamic translation! [param: @param_1]"],
 	"lang_english": "English",
-	"lang_italian": "Italiano"
+	"lang_italian": "Italiano",
+	"message" : "English message!"
 }
