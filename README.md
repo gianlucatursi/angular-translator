@@ -71,14 +71,15 @@ In the example below i use always `<span>` element but you can use whatever you 
 ### Simple translation
 Used for a simple text to translate  
 
-```javascript
-/** Result **/
-Hello World!
+**Result**
+    Hello World!
 
-/** HTML **/
+**HTML**
+```html
 <span translated="title"></span>
-
-/** en.json **/
+```
+**en.json**
+```json
 { "title" : "Hello World!" }
 ```
 
@@ -87,32 +88,39 @@ Used for translate a string that contain runtime data.
 You can define your dynamic content with `@param_name` then use `translated-params` in your HTML tag for passing **@param_name** value.  
 Check the sample below:
 
-```javascript
-/** Result **/
-A translation module for AngularJS. [v0.0.1]
+**Result**
+    A translation module for AngularJS. [v0.0.1]
 
-/** HTML **/
+**HTML**
+```html
 <span translated="description" translated-params="version"></span>
 <!-- alternative without angular var -->
 <span translated="description" translated-params="{'version':'v0.0.1'}"></span>
+```
 
-/** AngularJS **/
+**AngularJS**
+```javascript
 $scope.version = {"version":"v0.0.1"};
+```
 
-/** en.json **/
+**en.json**
+```json
 { "description": "A translation module for AngularJS. [@version]" }
 ```
 
 ### Inputs
-Used for translate placeholder in input filed. Insert in you translated tag `placeholder-translated`  
-```javascript
-/** HTML **/
+Used for translate placeholder in input filed. Insert in you translated tag `placeholder-translated`
+
+**HTML**
+```html
 <form>
     <label translated="form.username.label"></label>
     <input placeholder-translated="form.username.placehoder" translated="">
 </form>
+```
 
-/** en.json **/
+**en.json**
+```json
 {
     "form": {
         "username": {
@@ -130,37 +138,39 @@ Used for translate a string that can be single or prural.
 In the example below there is a combination of parameters and prural.  
 In your `<lang>.json` file you should define an array with two elements and in position `0` the sentece for the single case and in position `1` the sentence for the prural case.  
 
-```javascript
-/** Result **/
-1 result
+**Result**  
+    1 result
+    
+    6 results
 
-6 results
-
-/** HTML **/
+**HTML**
+```html
 <!-- Single value -->
 <p translated="results" prural="results_value.one.value" translated-params="results_value.one"></p>
 
 <!-- Prural value -->
 <p translated="results" prural="6" translated-params="{'value': 6}"></p>
+```
 
-/** AngularJS **/
+**AngularJS**  
+```javascript
 $scope.results_value = {
     "one": {
         "value" : 1
     }
 };
+```
 
-/** en.json **/
+**en.json**  
+```json
 { "results": ["@value result", "@value results"] }
-
 ```
 
 ### Other examples
 This chapter is for understand better how to define you json file for a language.  
       
-```javascript
-
-/** HTML **/
+**HTML**
+```html
 <!-- Simple translation -->
 <div translated="home_page.title"></div>
 
@@ -175,9 +185,10 @@ This chapter is for understand better how to define you json file for a language
 
 <!-- Prural with parameters -->
 <h1 translated="home_page.results" prural="6" translated-params="{'value': 6}"></h1>
+```
 
-/** en.json **/
-
+**en.json**  
+```json
 {
     "home_page": {
         "title" : "Home page",
@@ -193,17 +204,18 @@ This chapter is for understand better how to define you json file for a language
         ]
     }
 }
-
 ```
+
 ### Dynamic translation
 Inject `$translator` service in your controller/service/etc.. for a run time translation with `$translator.translate(<key>, <params>, <prural_value>)`   
       
-```javascript
-
-/** HTML **/
+**HTML**
+```html
 <button ng-click="translation()">Click Me!</button>
+```
 
-/** AngularJS **/
+**AngularJS**
+```javascript
 app.controller('..', ['$scope', '$translator',
     function($scope, $translator){
         $scope.translation = function(){
@@ -213,22 +225,24 @@ app.controller('..', ['$scope', '$translator',
         }
     }
 );
+```
 
-/** en.json **/
+**en.json**  
+```json
 { "message_in_controller": "Dynamic translation!" }
-
 ```
 ### Switch language
 You can switch between language in real time. (try the example in this repo)
 
-```javascript
-
-/** HTML **/
+**HTML**  
+```html
 <p translated="message"></p>
 <button ng-click="switch('it')">Italiano</button>
 <button ng-click="switch('en')">English</button>
+```
 
-/** AngularJS **/
+**AngularJS**  
+```
 $scope.switch = function _switch(lng){
     // async method. When finish call $compile.
     $translator
@@ -238,8 +252,10 @@ $scope.switch = function _switch(lng){
             default  : "en"
     });
 }
+```
 
-/** en.json **/
+**en.json**
+```json
 { "message" : "English message!" }
 
 ```
