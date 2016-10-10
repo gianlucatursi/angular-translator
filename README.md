@@ -140,7 +140,6 @@ In your `<lang>.json` file you should define an array with two elements and in p
 
 **Result**  
     1 result
-    
     6 results
 
 **HTML**
