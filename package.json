@@ -1,5 +1,5 @@
 {
-  "name": "angular-translator",
+  "name": "ng-translator",
   "description": "A translation module for AngularJS",
   "version": "0.0.1",
   "filename": "angular-translator.min.js",

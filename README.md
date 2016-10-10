@@ -1,4 +1,4 @@
-# Angular Translator
+# Angular Translator (ngTranslator)
 
 A translation module for AngularJS. 
 
@@ -28,10 +28,10 @@ A translation module for AngularJS.
 You can install with bower or npm  
 ```bash
 // bower
-bower install angular-translator --save
+bower install ng-translator --save
 
 // npm
-npm install angular-translator --save
+npm install ng-translator --save
 ```
 
 ### Import in your project
