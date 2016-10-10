@@ -3,6 +3,7 @@
 A translation module for AngularJS. 
 
 [![Bower version][bower-image]][bower-image]
+[![npm download][downloads-image]][downloads-url]
 [![License][license-image]][license-url]
 
 ##Table of contents:
@@ -276,9 +277,13 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-
-[bower-image]: https://img.shields.io/bower/v/angular-translator.svg?style=flat-square
+[npm-image]: https://img.shields.io/npm/v/ng-translator.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/ng-translator
+[bower-image]: https://img.shields.io/bower/v/ng-translator.svg?style=flat-square
 [bower-url]: https://github.com/gianlucatursi/angular-translator
 
-[license-image]: http://img.shields.io/npm/l/angular-translator.svg?style=flat-square
+[downloads-image]: https://img.shields.io/npm/dm/ng-translator.svg?style=flat-square
+[downloads-url]: https://npmjs.org/package/ng-translator
+
+[license-image]: http://img.shields.io/npm/l/ng-translator.svg?style=flat-square
 [license-url]: LICENSE
